@@ -97,6 +97,30 @@ src/
 └── __init__.py
 ```
 
-## About the `src` Directory
+## About
 
-The `
+The `Agentic Chatbot` project is designed to be modular, extensible, and easy to use for both end-users and developers. It leverages the latest in LLM and graph-based orchestration technology to provide a robust conversational AI platform. The codebase is organized for clarity, with each major functionality in its own module or directory.
+
+## Troubleshooting
+
+- **Dependency Issues:** Ensure all packages in `requirements.txt` are installed. Use a virtual environment to avoid conflicts.
+- **API Key Errors:** Double-check that your Groq and Tavily API keys are correct and set in the UI.
+- **Streamlit Not Launching:** Make sure you are running the command from the project root and that `app.py` exists.
+- **Merge Conflicts or Git Issues:** If you encounter git errors, ensure your branch is up to date with the remote and resolve any conflicts as needed.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [LangChain](https://github.com/langchain-ai/langchain)
+- [Groq](https://groq.com/)
+- [Streamlit](https://streamlit.io/)
+- [Tavily](https://tavily.com/)
+- [Wikipedia](https://www.wikipedia.org/)
+- [arXiv](https://arxiv.org/)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue for suggestions and improvements.
