@@ -12,7 +12,6 @@ A powerful AI chatbot built with LangGraph and Streamlit, featuring Groq LLM int
   - **Chatbot With Web**: Enhanced chatbot with access to external tools for web search and knowledge retrieval.
 - **Tool Integration**: The chatbot can leverage external tools for richer responses:
   - **Arxiv Search**: Retrieves academic papers from Arxiv.
-  - **Wikipedia Search**: Fetches information from Wikipedia.
   - **Tavily Web Search**: Performs general web searches.
 - **Dynamic Graph Construction**: The conversation graph is built dynamically based on the selected use case, with nodes for chat and tool invocation.
 - **State Management**: Maintains conversation state using a typed dictionary structure.
@@ -118,7 +117,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Groq](https://groq.com/)
 - [Streamlit](https://streamlit.io/)
 - [Tavily](https://tavily.com/)
-- [Wikipedia](https://www.wikipedia.org/)
 - [arXiv](https://arxiv.org/)
 
 ## Contributing
