@@ -7,3 +7,5 @@ langchain_core
 faiss-cpu
 streamlit
 tavily-python
+wikipedia
+arxiv

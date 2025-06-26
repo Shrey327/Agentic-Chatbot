@@ -2,13 +2,38 @@
 
 A powerful AI chatbot built with LangGraph and Streamlit, featuring Groq LLM integration for high-performance language model interactions.
 
-## Features
+## Features & Functionalities
 
-- 🤖 Interactive chat interface using Streamlit
-- 🚀 Powered by Groq's high-performance LLMs
-- 🔄 LangGraph-based conversation flow
-- 🔒 Secure API key management
-- 🎯 Multiple use case support
+- **Interactive Chat Interface**: Built with Streamlit, providing a modern, user-friendly chat experience.
+- **Groq LLM Integration**: Supports high-performance language models via Groq, with selectable models and secure API key management.
+- **LangGraph-Based Orchestration**: Uses LangGraph to manage conversation flow and state, supporting modular graph-based chatbot logic.
+- **Multiple Use Cases**:
+  - **Basic Chatbot**: Standard conversational AI using only the LLM.
+  - **Chatbot With Web**: Enhanced chatbot with access to external tools for web search and knowledge retrieval.
+- **Tool Integration**: The chatbot can leverage external tools for richer responses:
+  - **Arxiv Search**: Retrieves academic papers from Arxiv.
+  - **Wikipedia Search**: Fetches information from Wikipedia.
+  - **Tavily Web Search**: Performs general web searches.
+- **Dynamic Graph Construction**: The conversation graph is built dynamically based on the selected use case, with nodes for chat and tool invocation.
+- **State Management**: Maintains conversation state using a typed dictionary structure.
+- **Configurable UI**: Sidebar options for LLM selection, model choice, use case, and API keys (Groq, Tavily).
+
+## Main Tools & Modules
+
+- **LLMS/groqllm.py**: Handles Groq LLM initialization and model selection.
+- **graph/graph_builder.py**: Builds the conversation graph, supporting both basic and tool-augmented chatbots.
+- **nodes/basic_chatbot_node.py**: Implements the basic chatbot node logic.
+- **nodes/chatbot_with_Tool_node.py**: Implements the chatbot node with tool integration.
+- **tools/search_tool.py**: Provides access to Arxiv, Wikipedia, and Tavily search tools, and creates tool nodes for the graph.
+- **state/state.py**: Defines the structure for maintaining conversation state.
+- **ui/streamlitui/loadui.py**: Loads and configures the Streamlit UI, including sidebar controls.
+- **ui/streamlitui/display_result.py**: Handles displaying chat and tool results in the UI.
+- **ui/uiconfigfile.py & uiconfigfile.ini**: Manage and store UI configuration options.
+
+## Example Use Cases
+
+- **Basic Chatbot**: For general conversation and Q&A.
+- **Chatbot With Web**: For enhanced answers using real-time web, Wikipedia, and Arxiv search.
 
 ## Prerequisites
 
@@ -36,11 +61,11 @@ pip install -r requirements.txt
 [DEFAULT]
 PAGE_TITLE = LangGraph Agentic AI
 LLM_OPTIONS = Groq
-USECASE_OPTIONS = Basic Chatbot
-GROQ_MODEL_OPTIONS = llama2-70b, mixtral-8x7b, gemma-7b
+USECASE_OPTIONS = Basic Chatbot, Chatbot With Web
+GROQ_MODEL_OPTIONS = llama-3.1-8b-instant, llama-3.3-70b-versatile, gemma2-9b-it
 ```
 
-2. Set up your Groq API key in the Streamlit interface
+2. Set up your Groq API key in the Streamlit interface. For the "Chatbot With Web" use case, you will also need a Tavily API key.
 
 ## Usage
 
@@ -55,6 +80,7 @@ streamlit run app.py
    - Select your preferred Groq model
    - Enter your Groq API key
    - Choose the use case
+   - (If using web tools) Enter your Tavily API key
    - Start chatting!
 
 ## Project Structure
@@ -62,22 +88,15 @@ streamlit run app.py
 ```
 src/
 ├── langgraphagenticai/
-│   ├── LLMS/
-│   │   └── groqllm.py
-│   ├── graph/
-│   │   └── graph_builder.py
-│   ├── nodes/
-│   │   └── basic_chatbot_node.py
-│   ├── state/
-│   │   └── state.py
-│   └── ui/
-│       ├── streamlitui/
-│       │   ├── display_result.py
-│       │   └── loadui.py
-│       └── uiconfigfile.ini
-└── app.py
+│   ├── LLMS/                # LLM integrations (Groq)
+│   ├── graph/               # Graph construction and orchestration
+│   ├── nodes/               # Chatbot node logic (basic, with tools)
+│   ├── state/               # State management
+│   ├── tools/               # External tool integrations
+│   └── ui/                  # Streamlit UI and configuration
+└── __init__.py
 ```
 
-## Contributing
+## About the `src` Directory
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+The `
